@@ -34,11 +34,6 @@ const AddBudgetForm = () => {
             input.setCustomValidity("");
         }
     };
-    const dispatch = useDispatch()
-
-    const handleSaveNewBudget = (event) => {
-        dispatch(saveNewBudget())
-    }
 
     return (
         <div className="form-wrapper">
