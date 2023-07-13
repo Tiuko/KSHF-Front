@@ -70,7 +70,7 @@ const AddBudgetForm = () => {
                     />
                 </div>
                 <input type="hidden" name="_action" value="createBudget"/>
-                <button onClick={handleSaveNewBudget} type="submit" className="btn btn--dark" disabled={isSubmitting}>
+                <button type="submit" className="btn btn--dark" disabled={isSubmitting}>
                     {
                         isSubmitting ? <span>Création en cours</span> :
                         (
