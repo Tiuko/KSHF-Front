@@ -8,12 +8,15 @@ import { toast } from "react-toastify";
 import { deleteItem, getAllMatchingItems } from "../helpers/helpers.js";
 
 export function deleteBudget({ params }) {
+    console.log("tesssssttttaallex")
     try {
+        console.log("consolelog1")
         deleteItem({
             key: "budgets",
             id: params.id,
         });
 
+        console.log("consolelog2")
         const associatedExpenses = getAllMatchingItems({
             category: "expenses",
             key: "budgetId",
@@ -26,7 +29,6 @@ export function deleteBudget({ params }) {
                 id: expense.id,
             });
         });
-
         toast.success("Ton budget a bien été supprimé");
     } catch (e) {
         throw new Error("Il y a eu un problème pendant la suppression de ton budget");

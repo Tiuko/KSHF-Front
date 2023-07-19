@@ -1,17 +1,17 @@
 import * as dayjs from "dayjs";
 import {
-  FETCH_DAILY_DATA,
-  FETCH_MONTHLY_DATA,
-  FETCH_WEEKLY_DATA,
-  FETCH_YEARLY_DATA,
-  FETCH_BUDGETS,
-  FETCH_EXPENSES,
-  SAVE_NEW_BUDGET,
-  SAVE_NEW_EXPENSE,
-  saveDaylyData,
-  saveWeeklyData,
-  saveMonthlyData,
-  saveYearlyData,
+    FETCH_DAILY_DATA,
+    FETCH_MONTHLY_DATA,
+    FETCH_WEEKLY_DATA,
+    FETCH_YEARLY_DATA,
+    FETCH_BUDGETS,
+    FETCH_EXPENSES,
+    SAVE_NEW_BUDGET,
+    SAVE_NEW_EXPENSE,
+    saveDaylyData,
+    saveWeeklyData,
+    saveMonthlyData,
+    saveYearlyData, DELETE_EXPENSE,
 } from "../actions/fetchDataActions";
 import { axiosPrivate } from "../axios/axiosPrivate";
 import { saveBudgetsState, saveExpensesState } from "../actions/budgetActions";
@@ -124,6 +124,13 @@ const fetchDataMiddleware = (store) => (next) => (action) => {
           console.log(error);
         });
       break;
+      case DELETE_EXPENSE:
+          const expenseId = action.id;
+          axiosPrivate.delete(`/transaction/${expenseId}`)
+              .then((response) =>{
+                  console.log(response);
+              })
+          break;
 
     default:
   }
