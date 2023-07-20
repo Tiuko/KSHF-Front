@@ -8,6 +8,7 @@ import BudgetItem from "../components/BudgetItem.jsx";
 import AddExpenseForm from "../components/AddExpenseForm.jsx";
 import Table from "../components/Table.jsx";
 import {deleteExpense} from "../../../../actions/fetchDataActions.js";
+import {useSelector} from "react-redux";
 
 
 
@@ -66,7 +67,8 @@ export async function budgetAction({ request }) {
 }
 
 const BudgetPage = () => {
-    const { budget, expenses } = useLoaderData();
+    const { budget } = useLoaderData();
+    const { expenses } = useSelector((state) => state.budget);
     console.log({budget, expenses})
 
     return (
@@ -88,7 +90,7 @@ const BudgetPage = () => {
                     <h2>
                         <span className="accent">{budget.name}</span>
                     </h2>
-                    <Table expenses={expenses} showBudget={false} />
+                    <Table expenses={expenses.filter(expense => expense.budget_id === budget.id)} showBudget={false} />
                 </div>
             )}
         </div>

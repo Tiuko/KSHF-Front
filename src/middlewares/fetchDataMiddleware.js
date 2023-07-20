@@ -124,6 +124,7 @@ const fetchDataMiddleware = (store) => (next) => (action) => {
           console.log(error);
         });
       break;
+
       case DELETE_EXPENSE:
           const expenseId = action.id;
           axiosPrivate.delete(`/transaction/${expenseId}`)

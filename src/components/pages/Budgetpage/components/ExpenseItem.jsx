@@ -7,7 +7,9 @@ import { TrashIcon } from "@heroicons/react/24/solid";
 // helper imports
 import {formatCurrency, formatDateToLocaleString, getAllMatchingItems,} from "../helpers/helpers.js";
 import {useDispatch} from "react-redux";
-import {deleteExpense, fetchExpenses} from "../../../../actions/fetchDataActions.js";
+import {deleteExpense, fetchBudgets, fetchExpenses} from "../../../../actions/fetchDataActions.js";
+
+import { toast } from "react-toastify";
 
 const ExpenseItem = ({ expense, showBudget }) => {
     const dispatch = useDispatch();
@@ -24,6 +26,8 @@ const ExpenseItem = ({ expense, showBudget }) => {
     const handleDeleteExpense = (event) => {
         event.preventDefault();
         dispatch(deleteExpense(expense.id));
+        toast.success("Dépense supprimée!")
+        dispatch(fetchBudgets())
         dispatch(fetchExpenses())
     }
 
