@@ -1,3 +1,4 @@
+// Import des dépendances nécessaires
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
@@ -13,8 +14,6 @@ import ConnectionForm from "./components/ConnectionForm/ConnectionForm";
 import Inscription from "./components/Inscription/Inscription";
 import Profil from "./components/pages/Profil/Profil";
 import Transaction from "./components/Transaction/Transaction";
-
-// Import de librairies
 
 // Import Actions
 import { logoutAction } from "./components/pages/Budgetpage/actions/logout";
