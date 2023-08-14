@@ -34,7 +34,7 @@ const ExpenseItem = ({ expense, showBudget }) => {
     return (
         <>
             <td style={{verticalAlign: "middle"}}>{expense.name}</td>
-            <td style={{verticalAlign: "middle"}}>{formatCurrency(expense.amount)}</td>
+            <td style={{verticalAlign: "middle"}}>{formatCurrency(expense.amount)} €</td>
             <td style={{verticalAlign: "middle"}}>{formatDateToLocaleString(expense.created_at)}</td>
             {showBudget && (
                 <td style={{verticalAlign: "middle"}}>

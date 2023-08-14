@@ -5,11 +5,26 @@
 }
 
 .home__title {
-    margin-top: 5rem;
+    margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
     font-size: var(--h1-font-size);
     font-family: var(--pixel-font);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage__expenses-title {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.home__title img {
+    margin-left: 2rem;
+    padding: 0;
+    display: inline-block;
 }
 
 .multiple-text {
@@ -33,17 +48,26 @@
     margin-bottom: 8rem;
 }
 
+.homepage__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-content: center;
+}
+
 button {
     margin-left: 1rem;
     margin-bottom: 3rem;
     padding: 0.1rem 1.5rem;
     border-radius: 1rem;
-    font-size: 0.7rem;
+    font-size: 1.2rem;
     font-family: var(--body-font);
+    background-color: var(--title-color-dark);
+    color: #ffffff;
 }
 
 button:hover {
-    background-color: #44C768;
+    background-color: var(--hover-pixel);
     transition: .4s;
 }
 
@@ -52,17 +76,17 @@ button:hover {
     margin-right: auto;
     margin-left: auto;
     display: flex;
+    justify-content: space-between;
 }
 
 .homepage__content-right {
+    flex: 1;
     margin-left: 4rem;
     margin-bottom: 5rem;
 }
 
-h2 {
-    font-family: var(--pixel-font);
-    font-weight: 400;
-    font-size: 1.8rem;
+.homepage__content-left {
+    flex: 1;
 }
 
 .homepage__expenses {
@@ -84,7 +108,17 @@ h2 {
 .homepage__expenses-link {
     margin-top: 1.6rem;
     margin-bottom: 2rem;
-    font-size: 0.9rem;
-    color: var(--text-color);
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+.homepage__expenses-title-detail {
+    font-size: 1.4rem;
+    font-weight: normal;
 }
 

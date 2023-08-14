@@ -6,13 +6,12 @@ import image from '../../../assets/avatar.png';
 import { Link } from 'react-router-dom';
 
 const landingBoxStyles = {
-  width: '700px',
-  height: '700px',
-  position: 'absolute',
-  marginTop: 'auto',
-  marginLeft: 'auto',
-  top: '25%',
-  left: '35%'
+    width: '50%',
+    height: '50%',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
 }
 
 function LandingPage() {
@@ -36,21 +35,17 @@ function LandingPage() {
     }
   });
   return (
-  <>
-    <Box className='landing_box'
-      sx={landingBoxStyles}
-      >
-        <Avatar alt='mascott'src={image} sx={{ width: 300, height: 300, borderRadius: 0 }}  />
-        <p className="mascott_description" ref={mascottDescriptionRef}></p>
-        <p className='navigation_btn'>
-          <Link to={'/signin'} style={{ marginRight:'30px'}}>SignIn</Link>
-          <Link to={'/signup'}>SignUp</Link>
-
-        </p>
-        
-      </Box>
-
-  </>
+      <>
+          <div className='landing_title'>Keep Score & Have Fun</div>
+          <Box className='landing_box'>
+              <Avatar className="mascott_avatar" alt='mascott' src={image} />
+              <p className="mascott_description" ref={mascottDescriptionRef}></p>
+              <div className='navigation_btn'>
+                  <Link className='navigation_btn-link' to={'/signin'}>Sign In</Link>
+                  <Link to={'/signup'}>Sign Up</Link>
+              </div>
+          </Box>
+      </>
   );
 }
 export default LandingPage;

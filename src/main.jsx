@@ -121,7 +121,6 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-
       {
         path: "/app/shop/:productId/detail",
         element: (

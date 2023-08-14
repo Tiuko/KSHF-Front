@@ -66,10 +66,10 @@ const Homepage = () => {
     if (typedRef.current) {
       const typed = new Typed(typedRef.current, {
         strings: [
-          "Bienvenue sur la page d'accueil",
-          "Ici tu auras un aperçu global de tes dépenses",
-          "Clique sur les boutons pour gérer" + " la période désirée",
-          "N'oublie pas, pour t'enrichir, tu dois devenir une pince !!! (Abdelaziz - 2023)",
+          "BIENVENUE SUR LA PAGE D'ACCUEIL",
+          "ICI TU AURAS UN APERCU GLOBAL DE TES DEPENSES",
+          "CLIQUE SUR LES BOUTONS POUR AVOIR UN APERCU DE LA PERIODE DESIREE",
+          "N'OUBLIE PAS QUE POUR T'ENRICHIR, TU DOIS DEVENIR UNE PINCE !!! (Abdelaziz - 2023)",
         ],
         typeSpeed: 70,
         backSpeed: 30,
@@ -119,18 +119,18 @@ const Homepage = () => {
         <div className="homepage__content-left">
           <div className="homepage__content-left-all">
             <div className="homepage__expenses">
-              <h2 className="homepage__expenses-title">Dépenses</h2>
+              <h2 className="homepage__expenses-title">DEPENSES</h2>
               <h3 className="homepage__expenses-current">
                 {expensesSum} sur {totalBudget} €
               </h3>
             </div>
 
             <div className="homepage__budget">
-              <h2 className="homepage__expenses-title">Budget</h2>
+              <h2 className="homepage__expenses-title">BUDGET</h2>
               {budgets &&
                 budgets.map((specificbudget) => (
                   <h3 key={uuidv4()} className="homepage__budget-current">
-                    {specificbudget.name} : {specificbudget.amount}€
+                    {specificbudget.name} : {specificbudget.amount} €
                   </h3>
                 ))}
               <NavLink
@@ -149,9 +149,9 @@ const Homepage = () => {
           <div className="homepage__quests">
             <div className="homepage__mainquest">
               <h2 className="homepage__expenses-title">
-                Quête principale en cours
+                QUÊTE PRINCIPALE EN COURS
               </h2>
-              <p>
+              <p className="homepage__expenses-title-detail">
                 Ne pas se doucher pendant 1 semaine pour diminuer son budget eau
                 du mois
               </p>
@@ -159,9 +159,9 @@ const Homepage = () => {
 
             <div className="homepage__sidequest">
               <h2 className="homepage__expenses-title">
-                Quête secondaire suivie
+                QUÊTE SECONDAIRE SUIVIE
               </h2>
-              <p>Aller au cinéma sans acheter du popcorn</p>
+              <p className="homepage__expenses-title-detail">Aller au cinéma sans acheter du popcorn</p>
               <NavLink
                 className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "active" : ""
